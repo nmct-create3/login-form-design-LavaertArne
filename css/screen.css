@@ -2,12 +2,46 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "Inter UI";
+    font-weight: 200;
+    src: url("../fonts/Inter-UI-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter UI";
+    font-weight: 400;
+    src: url("../fonts/Inter-UI-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter UI";
+    font-weight: 600;
+    src: url("../fonts/Inter-UI-Bold.woff") format("woff");
+}
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
 
 :root {
-
+    --color-alpha-xx-light: #DCEAFF;
+    --color-alpha-x-light: #81ADF0;
+    --color-alpha-light: #4F95FF;
+    --color-alpha: #3385FF;
+    --color-alpha-dark: #2E77E6;
+    --color-alpha-x-dark: #1B4186;
+    --color-neutral-xxxx-light: #F5F6FA;
+    --color-neutral-xxx-light: #E2E3E7;
+    --color-neutral-xx-light: #CACCD4;
+    --color-neutral-x-light: #B5B6C0;
+    --color-neutral-light: #A0A1AD;
+    --color-neutral: #8B8C9A;
+    --color-neutral-dark: #757787;
+    --color-neutral-x-dark: #606274;
+    --color-neutral-xx-dark: #4B4C60;
+    --color-neutral-xxx-dark: #35374D;
+    --color-neutral-xxxx-dark: #20223A;
 }
 
 /* CSS variables here */
@@ -25,17 +59,15 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: "Inter UI", Helvetica, arial, sans-serif;
+    color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: var(--color-neutral-xxxx-light);
 }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
     box-sizing: inherit;
 }
 
@@ -47,13 +79,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: var(--color-alpha);
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: var(--color-alpha);
     color: white;
     text-shadow: none;
 }
@@ -79,9 +111,7 @@ img {
     Default markup for typographic elements
 */
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-weight: 600;
 }
 
@@ -103,31 +133,21 @@ h3 {
     margin: 0 0 24px;
 }
 
-h4,
-h5,
-h6 {
+h4, h5, h6 {
     font-size: 20px;
     line-height: 24px;
     margin: 0 0 24px;
 }
 
-p,
-ol,
-ul,
-dl,
-table,
-address,
-figure {
+p, ol, ul, dl, table, address, figure {
     margin: 0 0 24px;
 }
 
-ul,
-ol {
+ul, ol {
     padding-left: 24px;
 }
 
-li ul,
-li ol {
+li ul, li ol {
     margin-bottom: 0;
 }
 
@@ -158,18 +178,20 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: var(--color-alpha);
     transition: all .1s ease-in-out;
 }
 
-a:visited,
-a:active {
-    color: HotPink;
+a:visited, a:active {
+    color: var(--color-alpha);
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
     color: DeepPink;
+}
+
+label, input {
+    display: block;
 }
 
 /*------------------------------------*\
@@ -189,6 +211,9 @@ a:focus {
 
 .o-row--login {
     /* stuff here to align the card */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 /* size modifiers */
@@ -226,7 +251,8 @@ a:focus {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 79.5em; /* 79.5 * 16px = 1272 */
+    max-width: 79.5em;
+    /* 79.5 * 16px = 1272 */
     width: 100%;
 }
 
@@ -240,19 +266,18 @@ a:focus {
     position: relative;
 }
 
-.o-section + .o-section {
+.o-section+.o-section {
     padding-top: 24px;
 }
 
 @media (min-width: 768px) {
-    .o-section--lg + .o-section--lg,
-    .o-section--xl + .o-section--xl {
+    .o-section--lg+.o-section--lg, .o-section--xl+.o-section--xl {
         padding-top: 48px;
     }
 }
 
 @media (min-width: 992px) {
-    .o-section--xl + .o-section--xl {
+    .o-section--xl+.o-section--xl {
         padding-top: 72px;
     }
 }
@@ -282,7 +307,7 @@ a:focus {
     margin: 0 -12px;
 }
 
-.o-layout--gutter > .o-layout__item {
+.o-layout--gutter>.o-layout__item {
     padding: 0 12px;
 }
 
@@ -290,7 +315,7 @@ a:focus {
     margin: 0 -6px;
 }
 
-.o-layout--gutter-sm > .o-layout__item {
+.o-layout--gutter-sm>.o-layout__item {
     padding: 0 6px;
 }
 
@@ -298,7 +323,7 @@ a:focus {
     margin: 0 -24px;
 }
 
-.o-layout--gutter-lg > .o-layout__item {
+.o-layout--gutter-lg>.o-layout__item {
     padding: 0 24px;
 }
 
@@ -306,7 +331,7 @@ a:focus {
     margin: 0 -48px;
 }
 
-.o-layout--gutter-xl > .o-layout__item {
+.o-layout--gutter-xl>.o-layout__item {
     padding: 0 48px;
 }
 
@@ -406,18 +431,14 @@ a:focus {
     width: auto;
     overflow: visible;
     background: transparent;
-
     /* inherit font & color from ancestor */
     color: inherit;
     font: inherit;
-
     /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
     line-height: normal;
-
     /* Corrects font smoothing for webkit */
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
-
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
 }
@@ -432,17 +453,78 @@ a:focus {
     Website main logo
 */
 
+.c-logo {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.c-logo__symbol {
+    height: 100%;
+    display: block;
+}
+
+.c-logo__symbol--circle1 {
+    fill: #20223A;
+}
+
+.c-logo__symbol--circle2 {
+    fill: var(--color-alpha);
+}
+
+.c-logo__symbol--circle3 {
+    fill: #1B4186;
+}
+
+.u-theme-color-dark .c-logo__symbol, .u-theme-color-dark .c-logo__symbol--circle1, .u-theme-color-dark .c-logo__symbol--circle2, .u-theme-color-dark .c-logo__symbol--circle3 {
+    fill: #FFF;
+}
+
 /*
     Component: Card
     ---
     Card with box shadow
 */
 
+.c-card {
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.c-card__body {
+    padding: 48px;
+}
+
+.c-card__title {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 48px;
+    margin-bottom: 0;
+}
+
+.c-card__footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin: 0px;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+    text-align: center;
+}
+
 /*
     Component: Forms
     ---
     Everything form related here
 */
+
+.c-form-field--option {
+    display: flex;
+    align-items: center;
+}
 
 /*
     Component: Input
@@ -451,10 +533,28 @@ a:focus {
 */
 
 .c-input {
+    border: 1px solid #E2E3E7;
+    border-radius: 4px;
+    font-family: "Inter UI";
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 
+.c-input--full-width {
+    width: 100%;
 }
 
 .c-input:focus {
+    box-shadow: 0px 0px 2px 2px #81ADF0;
+}
+
+input[type=checkbox]:checked {
+    background-image: linear-gradient(to bottom right, var(--color-alpha-x-light), var(--color-alpha-dark));
 }
 
 /*
@@ -464,13 +564,21 @@ a:focus {
 */
 
 .c-label {
+    color: var(--color-neutral-x-dark);
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+}
 
+.c-label--option {
+    margin-bottom: 0;
+    margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
 
 .c-form-field:focus-within .c-label {
-
+    color: #000;
 }
 
 /*
@@ -479,22 +587,15 @@ a:focus {
     Custom checkboxes & radio buttons
 */
 
-.c-custom-option {
-
-}
+.c-custom-option {}
 
 /* Hide the actual input but still be able to focus on it */
-.c-custom-option__input {
 
-}
+.c-custom-option__input {}
 
-.c-custom-option__label {
+.c-custom-option__label {}
 
-}
-
-.c-custom-option__fake-option {
-
-}
+.c-custom-option__fake-option {}
 
 .c-custom-option__symbol {
     /* Hide the svg initially */
@@ -502,29 +603,21 @@ a:focus {
 
 /* focused state */
 
-.c-custom-option__input:focus + .c-custom-option__label .c-custom-option__fake-option {
-
-}
+.c-custom-option__input:focus+.c-custom-option__label .c-custom-option__fake-option {}
 
 /* checked state */
 
-.c-custom-option__input:checked + .c-custom-option__label .c-custom-option__fake-option {
+.c-custom-option__input:checked+.c-custom-option__label .c-custom-option__fake-option {}
 
-}
-
-.c-custom-option__input:checked + .c-custom-option__label .c-custom-option__symbol {
+.c-custom-option__input:checked+.c-custom-option__label .c-custom-option__symbol {
     /* Show the svg when the invisible checkbox is checked */
 }
 
-.c-custom-option__input:checked + .c-custom-option__label .c-custom-option__path {
-
-}
+.c-custom-option__input:checked+.c-custom-option__label .c-custom-option__path {}
 
 /* focused & checked state */
 
-.c-custom-option__input:focus:checked + .c-custom-option__label .c-custom-option__fake-option {
-
-}
+.c-custom-option__input:focus:checked+.c-custom-option__label .c-custom-option__fake-option {}
 
 /*
     Component: Button
@@ -533,24 +626,27 @@ a:focus {
 */
 
 .c-button {
-
+    width: 100%;
+    padding: 12px;
+    background-color: #3385FF;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
 }
 
 .c-button:hover {
-
+    background-color: #245DB3;
 }
 
 .c-button:focus {
-
+    box-shadow: 0px 0px 2px 2px #81ADF0;
 }
 
-.c-button:active {
+.c-button:active {}
 
-}
-
-.c-button--block {
-
-}
+.c-button--block {}
 
 /*------------------------------------*\
 #UTILITIES
@@ -567,7 +663,11 @@ a:focus {
 }
 
 .u-color-neutral-dark {
-    color: Black;
+    color: var(--color-neutral-dark);
+}
+
+.u-theme-color-dark {
+    background-image: linear-gradient(to bottom right, var(--color-alpha-light), var(--color-alpha-dark));
 }
 
 /*
@@ -629,7 +729,6 @@ a:focus {
 .u-max-width-none {
     max-width: none !important;
 }
-
 
 /*
     Utilities: align
@@ -893,9 +992,7 @@ No media query since this is the default in mobile first design
 */
 
 @media print {
-    *,
-    *:before,
-    *:after {
+    *, *:before, *:after {
         background: transparent !important;
         color: #000 !important;
         /* Black prints faster:
@@ -903,8 +1000,7 @@ No media query since this is the default in mobile first design
         box-shadow: none !important;
         text-shadow: none !important;
     }
-    a,
-    a:visited {
+    a, a:visited {
         text-decoration: underline;
     }
     a[href]:after {
@@ -917,15 +1013,13 @@ No media query since this is the default in mobile first design
     * Don't show links that are fragment identifiers,
     * or use the `javascript:` pseudo protocol
     */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
+    a[href^="#"]:after, a[href^="javascript:"]:after {
         content: "";
     }
     pre {
         white-space: pre-wrap !important;
     }
-    pre,
-    blockquote {
+    pre, blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
@@ -936,18 +1030,14 @@ No media query since this is the default in mobile first design
     thead {
         display: table-header-group;
     }
-    tr,
-    img {
+    tr, img {
         page-break-inside: avoid;
     }
-    p,
-    h2,
-    h3 {
+    p, h2, h3 {
         orphans: 3;
         widows: 3;
     }
-    h2,
-    h3 {
+    h2, h3 {
         page-break-after: avoid;
     }
 }
