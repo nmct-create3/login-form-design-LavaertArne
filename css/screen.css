@@ -465,7 +465,7 @@ label, input {
 }
 
 .c-logo__symbol--circle1 {
-    fill: #20223A;
+    fill: var(--color-neutral-xxxx-dark);
 }
 
 .c-logo__symbol--circle2 {
@@ -473,7 +473,7 @@ label, input {
 }
 
 .c-logo__symbol--circle3 {
-    fill: #1B4186;
+    fill: var(--color-alpha-x-dark);
 }
 
 .u-theme-color-dark .c-logo__symbol, .u-theme-color-dark .c-logo__symbol--circle1, .u-theme-color-dark .c-logo__symbol--circle2, .u-theme-color-dark .c-logo__symbol--circle3 {
@@ -533,7 +533,7 @@ label, input {
 */
 
 .c-input {
-    border: 1px solid #E2E3E7;
+    border: 1px solid var(--color-neutral-xxx-light);
     border-radius: 4px;
     font-family: "Inter UI";
     font-size: 16px;
@@ -550,7 +550,7 @@ label, input {
 }
 
 .c-input:focus {
-    box-shadow: 0px 0px 2px 2px #81ADF0;
+    box-shadow: 0px 0px 2px 2px var(--color-alpha-x-light);
 }
 
 input[type=checkbox]:checked {
@@ -628,7 +628,7 @@ input[type=checkbox]:checked {
 .c-button {
     width: 100%;
     padding: 12px;
-    background-color: #3385FF;
+    background-color: var(--color-alpha);
     color: white;
     font-weight: 600;
     font-size: 16px;
@@ -641,7 +641,7 @@ input[type=checkbox]:checked {
 }
 
 .c-button:focus {
-    box-shadow: 0px 0px 2px 2px #81ADF0;
+    box-shadow: 0px 0px 2px 2px var(--color-alpha-x-light);
 }
 
 .c-button:active {}
